@@ -1,0 +1,36 @@
+{{#get "tags" limit="all" include="count.posts"}}
+<div class="topic-feed">
+    <div class="row">
+        {{#foreach tags as |tag|}}
+        {{#get "posts" order="published_at asc" filter="tag:{{slug}}+tag:-catalog" limit="5"}}
+        {{#if posts}}
+        <div class="col-md-6">
+            <section class="topic">
+                <header class="topic-header">
+                    <h2 class="topic-name">{{tag.name}}</h2>
+                    <div class="topic-count">
+                        {{plural tag.count.posts empty="No articles" singular="1 article" plural="% articles"}}
+                    </div>
+                </header>
+                
+                <ul class="topic-article-feed u-plain-list">
+                    {{#foreach posts}}
+                    <li class="topic-article">
+                        <h3 class="topic-article-title">
+                            <a class="topic-article-link" href="{{url}}">
+                                <i class="topic-article-icon icon icon-chevron-right"></i>{{title}}
+                            </a>
+                        </h3>
+                    </li>
+                    {{/foreach}}
+                </ul>
+                
+                <a class="topic-more button-arrow button-arrow-right" href="{{tag.url}}">View All</a>
+            </section>
+        </div>
+        {{/if}}
+        {{/get}}
+        {{/foreach}}
+    </div>
+</div>
+{{/get}}

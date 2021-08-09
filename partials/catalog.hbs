@@ -1,0 +1,22 @@
+{{#get "tags" order="created_at asc" limit="all" include="count.posts"}}
+<section class="catalog-feed">
+    {{#foreach tags as |tag|}}
+    {{#get "posts" include="tags,authors" order="published_at asc" filter="tag:{{slug}}+tag:catalog" limit="all"}}
+    {{#if posts}}
+    <section class="catalog-wrapper">
+        <header class="catalog-header topic-header">
+            <h2 class="catalog-title topic-name">{{tag.name}}</h2>
+        </header>
+        <div class="catalog-posts">
+            {{#foreach posts}}
+            <div class="catalog-item col-xl-3 col-md-5 col-sm-11 col-xs-12">
+                {{> catalog-item}}
+            </div>
+            {{/foreach}}
+        </div>
+    </section>
+    {{/if}}
+    {{/get}}
+    {{/foreach}}
+</section>
+{{/get}}

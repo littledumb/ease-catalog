@@ -8,12 +8,13 @@
     --white-color: #fff;
     --lighter-gray-color: #f7f7f7;
     --light-gray-color: #f1f1f1;
-    --mid-gray-color: #e6e6e6;
+    --mid-gray-color: #c6c6c6;
     --dark-gray-color: #1a1a1a;
     --black-color: #000;
     --font-base: roboto, sans-serif;
     --animation-base: ease-in-out;
     --navbar-height: 70px;
+    --shadow-base:  0 0 10px rgba(0, 0, 0, 0.02);
 }
 
 html {
@@ -33,7 +34,7 @@ body {
     line-height: 1.7;
     text-rendering: optimizeLegibility;
     word-break: break-word;
-    background-color: var(--white-color);
+    background-color: var(--lighter-gray-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
