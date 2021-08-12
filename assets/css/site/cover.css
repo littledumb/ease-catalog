@@ -30,6 +30,13 @@
     font-weight: 500;
 }
 
+.cover-meta {
+    margin: 45px auto 15px;
+    max-width:  750px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
 @media (max-width: 460px) {
     .site-cover .search {
         width: 100%;
